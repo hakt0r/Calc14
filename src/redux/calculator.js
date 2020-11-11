@@ -15,18 +15,13 @@ const reducer = ( state, action ) => {
   switch ( action.type ){
 
     case "@@INIT": return defaultState;
-
-    case "countdown":
-      return {
-          field: Number(state.field) - 1
-      }
   
     case "number":
       const current = state.field == 0 ? '' : state.field;
       return {
-      ...state,
-      field: `${current}${value}`
-    };
+        ...state,
+        field: `${current}${value}`
+      };
   
     case "clear": return { ...state, field: '' };
 
